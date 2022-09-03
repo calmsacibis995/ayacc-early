@@ -1,3 +1,10 @@
+/* 
+ * Copyright (c) 2022 calmsacibis995.
+ * All rights reserved.
+ */
+
+/* ayacc - The original version of Yacc */
+
 # include "dextern"
 # define IDENTIFIER 257
 # define MARK 258
