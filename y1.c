@@ -6,6 +6,7 @@
 /* ayacc - The original version of Yacc */
 
 # include "dextern"
+#include <stdlib.h>
 
 	/* variables used locally */
 
@@ -50,7 +51,7 @@ int **pres[NNONTERM+2];  /* vector of pointers to productions yielding each nont
 struct looksets *pfirst[NNONTERM+2];  /* vector of pointers to first sets for each nonterminal */
 int pempty[NNONTERM+1];  /* vector of nonterminals nontrivially deriving e */
 
-main(argc,argv) int argc; char *argv[]; {
+int main(int argc,char **argv) {
 
 	setup(argc,argv); /* initialize and read productions */
 	tbitset = NWORDS(ntokens);
