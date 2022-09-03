@@ -1,6 +1,6 @@
 # Makefile for ayacc
 # Original author: Bell Labs
-# Current author: ZeroCool32
+# Current author: calmsacibis995
 
 CFLAGS=-O -DWORD32
 head: ayacc 
