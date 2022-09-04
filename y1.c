@@ -51,23 +51,6 @@ int **pres[NNONTERM+2];  /* vector of pointers to productions yielding each nont
 struct looksets *pfirst[NNONTERM+2];  /* vector of pointers to first sets for each nonterminal */
 int pempty[NNONTERM+1];  /* vector of nonterminals nontrivially deriving e */
 
-int main(int argc,char **argv) {
-
-	setup(argc,argv); /* initialize and read productions */
-	tbitset = NWORDS(ntokens);
-	cpres(); /* make table of which productions yield a given nonterminal */
-	cempty(); /* make a table of which nonterminals can match the empty string */
-	cpfir(); /* make a table of firsts of nonterminals */
-	stagen(); /* generate the states */
-	output();  /* write the states and the tables */
-	go2out();
-	hideprod();
-	summary();
-	callopt();
-	others();
-	exit(0);
-	}
-
 others(){ /* put out other arrays, copy the parsers */
 	register c, i, j;
 
@@ -658,4 +641,21 @@ struct looksets *flset( p )   struct looksets *p; {
 		q->lset[j] = p->lset[j];
 		}
 	return( q );
+	}
+
+int main(int argc,char *argv[]) {
+
+	setup(argc,argv); /* initialize and read productions */
+	tbitset = NWORDS(ntokens);
+	cpres(); /* make table of which productions yield a given nonterminal */
+	cempty(); /* make a table of which nonterminals can match the empty string */
+	cpfir(); /* make a table of firsts of nonterminals */
+	stagen(); /* generate the states */
+	output();  /* write the states and the tables */
+	go2out();
+	hideprod();
+	summary();
+	callopt();
+	others();
+	exit(0);
 	}
