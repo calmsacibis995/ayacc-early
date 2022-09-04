@@ -6,6 +6,7 @@
 /* ayacc - The original version of Yacc */
 
 # include "dextern"
+#include <stdio.h>
 #include <stdlib.h>
 
 	/* variables used locally */
@@ -645,6 +646,8 @@ struct looksets *flset( p )   struct looksets *p; {
 
 int main(int argc,char *argv[]) {
 
+	printf("ayacc - Ancient Yacc\n");
+	printf("Converted to modern C by calmsacibis995\n");
 	setup(argc,argv); /* initialize and read productions */
 	tbitset = NWORDS(ntokens);
 	cpres(); /* make table of which productions yield a given nonterminal */
