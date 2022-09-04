@@ -69,7 +69,7 @@ int *prdptr[NPROD];	/* pointers to descriptions of productions */
 int levprd[NPROD] ;	/* precedence levels for the productions */
 
 
-setup(argc,argv) int argc; char *argv[];
+int setup(int argc,char *argv[])
 {	int i,j,lev,t, ty;
 	int c;
 	int *p;
